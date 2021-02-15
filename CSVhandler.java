@@ -88,4 +88,35 @@ public class CSVhandler {
 		this.cells = newCsv;
 		this.save();
 	}
+	
+	public Vector<String> searchByCol(String searchKey, int col) {
+		for(int i = 0; i < this.cells.size(); i++) {
+			if(this.cells.get(i).get(col).equals(searchKey)) {
+				return this.cells.get(i);
+			}
+		}
+		return null;
+	}
+	
+	public int GetRowIndexBySearch(String searchKey, int col) {
+		for(int i = 0; i < this.cells.size(); i++) {
+			if(this.cells.get(i).get(col).equals(searchKey)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	public Vector<String> GetRowByIndex(int i) {
+		return this.cells.get(i);
+	}
+	
+	public int getNumRows() {
+		return this.cells.size();
+	}
+	
+	public int getNumCols() {
+		return this.cells.get(0).size();
+	}
+	
 }
