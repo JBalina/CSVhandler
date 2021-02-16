@@ -119,4 +119,11 @@ public class CSVhandler {
 		return this.cells.get(0).size();
 	}
 	
+	public void appendToCsv(Vector<Vector<String>> items) throws IOException {
+		for(int i = 0; i < items.size(); i++) {
+			this.cells.add(items.get(i));
+		}
+		this.save();
+	}
+	
 }
